@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walentynkowa Strona</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f7d1e4, #fceae5);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    #container {
+        text-align: center;
+    }
+    h1 {
+        color: #6e3667;
+        font-size: 36px;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    button {
+        display: block; /* Dodana reguła dla przycisków */
+        font-size: 24px;
+        padding: 12px 24px;
+        margin: 15px auto; /* Centralizacja przycisków */
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background-color: #e36bae;
+        border: none;
+        color: white;
+        outline: none;
+    }
+    #takButton {
+        background-color: #5cba6e;
+    }
+    #nieButton {
+        background-color: #eb4d4b;
+    }
+
+    
+    
+    #obraz1{
+        height: 200px;
+        width: auto;
+    }
+
+    #obraz2
+        {
+            height: 80px;
+            width: auto;
+        }
+
+</style>
+</head>
+<body>
+
+<div id="container">
+    <h1><img src="https://gifyagusi.pl/img/2020/09/15/obrazek-gif/buziaki/Bia%C5%82y%20mi%C5%9B%20ca%C5%82uje%20br%C4%85zowego.gif" id="obraz2">CZY ZOSTANIESZ MOJĄ WALENTYNKĄ?<img src="https://gifyagusi.pl/img/2020/09/15/obrazek-gif/buziaki/Bia%C5%82y%20mi%C5%9B%20ca%C5%82uje%20br%C4%85zowego.gif" id="obraz2"></h1>
+
+    <button id="takButton" onclick="przenies()">Tak</button>
+    <button id="nieButton" onclick="zmien()">Nie</button>
+</div>
+
+<script>
+var takTekst = [
+    "Prosze?",
+    "bardzo ładnie prosze",
+    "bardzo bardzo ładnie prosze",
+    "bardzobardzo bardzo ładnie prosze",
+    "bardzo bardzo bardzo bardzo ładnie prosze",
+    "bardzo bardzo bardzo bardzo bardzo ładnie prosze"
+
+];
+var takTekstIndex = 0;
+
+function przenies()
+{
+    window.location.href = "2.html";
+}
+
+function zwieksz() {
+    var button = document.getElementById("takButton");
+    var wielkosc = parseFloat(window.getComputedStyle(button).fontSize);
+    button.style.fontSize = (wielkosc + 40) + "px";
+}
+
+function zmien() {
+    var button = document.getElementById('nieButton');
+    var wielkosc = parseFloat(window.getComputedStyle(button).fontSize);
+    button.innerHTML = takTekst[takTekstIndex];
+    takTekstIndex = (takTekstIndex + 1) % takTekst.length;
+    zwieksz();
+}
+</script>
+
+</body>
+</html>
